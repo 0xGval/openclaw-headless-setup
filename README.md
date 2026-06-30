@@ -28,6 +28,21 @@ Real-world setup documentation for running [OpenClaw](https://openclaw.ai) on a 
 - **Sandbox `mode: "off"` means exec runs on host** — `tools.elevated` is only relevant when sandbox is on
 - **CUPS may be exposed on 0.0.0.0:631** — disable if not needed (`sudo snap stop cups && sudo snap disable cups`)
 
+## X/Twitter plugin boundary
+
+Use the headless browser flow for browser-bound login and recovery tasks. For
+repeatable X/Twitter research, monitoring, or source packets, pair this setup
+with [TweetClaw](https://github.com/Xquik-dev/tweetclaw) as a separate OpenClaw
+plugin instead of adding more browser session handling to the server guide.
+
+Good boundaries:
+
+- Keep cookie injection and host security in this headless setup.
+- Use TweetClaw search, reply-search, follower export, user lookup, or monitors
+  to collect reviewed X/Twitter context for other agents.
+- Keep TweetClaw write-like actions in their own approval flow before any
+  publish, reply, follow, DM, media upload, or giveaway action.
+
 ## Who is this for
 
 Anyone setting up OpenClaw on a headless Linux server or mini PC who wants a security-first configuration with multi-agent isolation. Especially useful if you're:
